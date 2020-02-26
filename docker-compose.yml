@@ -22,3 +22,11 @@ services:
     depends_on:
       - backend
     command: npm run dev
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: sample_user
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: django_db
+    ports:
+      - "5436:5432"
